@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model PaginatedList<ContosoUniversityHW.Models.Student>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
@@ -28,8 +28,8 @@
     ...
 </table>
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    var prevDisabled = Model != null && !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = Model != null && !Model.HasNextPage ? "disabled" : "";
 }
 
 <a asp-action="Index"

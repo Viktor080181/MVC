@@ -17,7 +17,7 @@ namespace ContosoUniversityHW.Models  // или Data, в зависимости 
 
             var students = new Student[]
             {
-                new Student{FirstName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2005-09-01")},
+                new Student{FirstMidName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2005-09-01")},
                 // добавьте другие студенты
             };
 
