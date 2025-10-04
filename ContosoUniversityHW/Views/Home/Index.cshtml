@@ -28,8 +28,8 @@
     ...
 </table>
 @{
-    var prevDisabled = Model != null && !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = Model != null && !Model.HasNextPage ? "disabled" : "";
+    string prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    string nextDisabled = !Model.HasNextPage ? "disabled" : "";
 }
 
 <a asp-action="Index"
@@ -39,11 +39,13 @@
    class="btn btn-default @prevDisabled">
     Previous
 </a>
+
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-default @nextDisabled">
+   class="btn btn-default @prevDisabled">
     Next
 </a>
+
 
