@@ -6,6 +6,15 @@
 
 <h1>Details</h1>
 
+<h4>Courses</h4>
+<ul>
+    @foreach (var enrollment in Model.Enrollments)
+    {
+        <li>@enrollment.Course.Title</li>
+    }
+</ul>
+
+
 <div>
     <h4>Student</h4>
     <hr />

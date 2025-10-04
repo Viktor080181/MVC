@@ -1,0 +1,10 @@
+﻿@page
+@model ContosoUniversityHW.Pages.DetailsModel
+
+<h4>Courses</h4>
+<ul>
+    @foreach (var enrollment in Model.Enrollments)
+    {
+        <li>@enrollment.Course.Title (Credits: @enrollment.Course.Credits)</li>
+    }
+</ul>
